@@ -200,9 +200,9 @@ class SolicitudCita
 
 // Horarios de atención simulados
 $horarios = [
-    new HorarioAtencion("Médico general", "2026-11-02", "08:00"),
-    new HorarioAtencion("Médico general", "2026-11-02", "09:00", true),
-    new HorarioAtencion("Médico general", "2026-11-02", "10:00"),
+    new HorarioAtencion("Médico general", "2026-11-13", "08:00"),
+    new HorarioAtencion("Médico general", "2026-11-13", "09:00", true),
+    new HorarioAtencion("Médico general", "2026-11-13", "10:00"),
 ];
 
 // Crear el repositorio de horarios
