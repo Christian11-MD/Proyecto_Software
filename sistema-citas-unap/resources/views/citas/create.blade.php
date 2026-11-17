@@ -1,4 +1,3 @@
-
 @extends('layouts.app')
 
 @section('content')
@@ -20,6 +19,31 @@
 
                     <form action="{{ route('citas.store') }}" method="POST">
                         @csrf
+
+                        <!-- Especialidad -->
+                        <div class="mb-3">
+                            <label for="especialidad" class="form-label">
+                                Especialidad médica
+                            </label>
+
+                            <select
+                                class="form-select @error('especialidad') is-invalid @enderror"
+                                id="especialidad"
+                                name="especialidad"
+                                required
+                            >
+                                <option value="Medicina General" {{ old('especialidad') == 'Medicina General' ? 'selected' : '' }}>Medicina General</option>
+                                <option value="Odontología" {{ old('especialidad') == 'Odontología' ? 'selected' : '' }}>Odontología</option>
+                                <option value="Psicología" {{ old('especialidad') == 'Psicología' ? 'selected' : '' }}>Psicología</option>
+                                <option value="Obstetricia" {{ old('especialidad') == 'Obstetricia' ? 'selected' : '' }}>Obstetricia</option>
+                            </select>
+
+                            @error('especialidad')
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
+                            @enderror
+                        </div>
 
                         <!-- Fecha -->
                         <div class="mb-3">
